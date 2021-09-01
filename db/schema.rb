@@ -10,23 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_26_221328) do
+ActiveRecord::Schema.define(version: 2021_09_01_171945) do
 
-  create_table "donations", force: :cascade do |t|
-    t.integer "amount"
-    t.integer "nonprofit_id"
-    t.integer "user_id"
+  create_table "ballots", force: :cascade do |t|
+    t.integer "voter_id"
+    t.integer "candidate_id"
+    t.integer "year"
   end
 
-  create_table "nonprofits", force: :cascade do |t|
+  create_table "candidates", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.string "party"
+    t.string "seat"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "territory"
+  create_table "voters", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "party"
   end
 
 end
